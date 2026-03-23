@@ -37,6 +37,7 @@ const config: Config = {
 
   markdown: {
     format: 'md',
+    mermaid: true,
   },
 
   presets: [
