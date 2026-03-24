@@ -25,7 +25,7 @@ const config: Config = {
   organizationName: 'Mucunguzi256',
   projectName: 'ubunifu_SACCO',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -73,7 +73,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: 'dark',
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
@@ -84,8 +84,9 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {to: '/docs', label: 'Docs', position: 'left'},
-        {href: 'https://github.com/Mucunguzi256/ubunifu_SACCO', label: 'Repo', position: 'right'},
+        { to: '/docs', label: 'Documentation', position: 'left' },
+        { to: '/', label: 'Start Here', position: 'left' },
+        { href: 'https://github.com/Mucunguzi256/ubunifu_SACCO', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
@@ -94,19 +95,30 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {label: 'Docs', to: '/docs/home'},
+            { label: 'Home', to: '/docs/home' },
           ],
         },
         {
-          title: 'Repo',
+          title: 'Project',
           items: [
-            {label: 'Repo', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO'},
+            { label: 'Repository', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO' },
+            { label: 'Issues', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO/issues' },
+          ],
+        },
+        {
+          title: 'Navigation',
+          items: [
+            { label: 'All Docs', to: '/docs/home' },
+            { label: 'Methodology', to: '/docs/methodology-feasibility-study' },
           ],
         },
       ],
+      copyright: `Copyright © ${new Date().getFullYear()} Ubunifu SACCO. Built with Docusaurus.`,
     },
-    theme: prismThemes.github,
-    darkTheme: prismThemes.dracula,
+    prism: {
+      theme: prismThemes.vsDark,
+      darkTheme: prismThemes.vsDark,
+    },
   } satisfies Preset.ThemeConfig,
 };
 

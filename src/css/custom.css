@@ -1,135 +1,387 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* =============================================
+   UBUNIFU SACCO — Electric Indigo Theme
+   Dark-mode first, mobile responsive
+   ============================================= */
 
-/* You can override the default Infima variables here. */
+/* Root: light mode variables (fallback) */
 :root {
-  --ifm-color-primary: #0f766e;
-  --ifm-color-primary-dark: #0d6b64;
-  --ifm-color-primary-darker: #0c6560;
-  --ifm-color-primary-darkest: #0a534f;
-  --ifm-color-primary-light: #118176;
-  --ifm-color-primary-lighter: #13897e;
-  --ifm-color-primary-lightest: #15998d;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(15, 118, 110, 0.14);
-  --ifm-background-color: #f7faf8;
-  --ifm-navbar-background-color: rgba(255, 255, 255, 0.92);
+--ifm-color-primary: #6C63FF;
+    --ifm-color-primary-dark: #5A50F0;
+    --ifm-color-primary-darker: #4D43E8;
+    --ifm-color-primary-darkest: #3d35cc;
+    --ifm-color-primary-light: #8B84FF;
+    --ifm-color-primary-lighter: #A78BFA;
+    --ifm-color-primary-lightest: #C4BEFF;
+    --ifm-code-font-size: 13px;
+    --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+    --ifm-heading-font-weight: 500;
+    --docusaurus-highlighted-code-line-bg: rgba(108, 99, 255, 0.15);
+    --ubn-accent: #22D3EE;
+    --ubn-accent-muted: rgba(34, 211, 238, 0.12);
+    --ubn-indigo-muted: rgba(108, 99, 255, 0.15);
 }
 
+/* Dark mode — all core overrides */
 [data-theme='dark'] {
-  --ifm-color-primary: #3fd0c4;
-  --ifm-color-primary-dark: #28c8bb;
-  --ifm-color-primary-darker: #20bcb1;
-  --ifm-color-primary-darkest: #1a9b92;
-  --ifm-color-primary-light: #56d8cd;
-  --ifm-color-primary-lighter: #65ddd3;
-  --ifm-color-primary-lightest: #8ce7e0;
-  --docusaurus-highlighted-code-line-bg: rgba(63, 208, 196, 0.22);
+--ifm-color-primary: #6C63FF;
+    --ifm-color-primary-dark: #5A50F0;
+    --ifm-color-primary-darker: #4D43E8;
+    --ifm-color-primary-darkest: #3d35cc;
+    --ifm-color-primary-light: #8B84FF;
+    --ifm-color-primary-lighter: #A78BFA;
+    --ifm-color-primary-lightest: #C4BEFF;
+    --ifm-background-color: #111320;
+    --ifm-background-surface-color: #0D0F1A;
+    --ifm-navbar-background-color: #0D0F1A;
+    --ifm-footer-background-color: #0D0F1A;
+    --ifm-font-color-base: #E2E4F0;
+    --ifm-font-color-secondary: #9BA3C2;
+    --ifm-heading-color: #E2E4F0;
+    --ifm-link-color: #A78BFA;
+    --ifm-link-hover-color: #ffffff;
+    --ifm-code-background: rgba(255, 255, 255, 0.05);
+    --ifm-navbar-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+    --ifm-toc-border-color: rgba(255, 255, 255, 0.08);
+    --ifm-hr-border-color: rgba(255, 255, 255, 0.08);
+    --ifm-menu-color: #9BA3C2;
+    --ifm-menu-color-active: #A78BFA;
+    --ifm-table-stripe-background: rgba(255, 255, 255, 0.03);
+    --ifm-color-emphasis-300: rgba(255, 255, 255, 0.12);
+    --docusaurus-highlighted-code-line-bg: rgba(108, 99, 255, 0.15);
 }
 
+/* Light mode — explicit overrides for proper switching */
+[data-theme='light'] {
+    --ifm-color-primary: #6C63FF;
+    --ifm-color-primary-dark: #5A50F0;
+    --ifm-color-primary-darker: #4D43E8;
+    --ifm-color-primary-darkest: #3d35cc;
+    --ifm-color-primary-light: #8B84FF;
+    --ifm-color-primary-lighter: #A78BFA;
+    --ifm-color-primary-lightest: #C4BEFF;
+    --ifm-background-color: #ffffff;
+    --ifm-background-surface-color: #f8f9fa;
+    --ifm-navbar-background-color: rgba(255, 255, 255, 0.95);
+    --ifm-footer-background-color: #f8f9fa;
+    --ifm-font-color-base: #1a1a1a;
+    --ifm-font-color-secondary: #666666;
+    --ifm-heading-color: #1a1a1a;
+    --ifm-link-color: #6C63FF;
+    --ifm-link-hover-color: #5A50F0;
+    --ifm-code-background: rgba(108, 99, 255, 0.08);
+    --ifm-navbar-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    --ifm-toc-border-color: rgba(0, 0, 0, 0.1);
+    --ifm-hr-border-color: rgba(0, 0, 0, 0.1);
+    --ifm-menu-color: #666666;
+    --ifm-menu-color-active: #6C63FF;
+    --ifm-table-stripe-background: rgba(0, 0, 0, 0.03);
+    --ifm-color-emphasis-300: rgba(0, 0, 0, 0.1);
+    --docusaurus-highlighted-code-line-bg: rgba(108, 99, 255, 0.15);
+}
+
+/* ── Hero (landing) ── */
+.hero-section {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 4rem 0 6rem;
+    background: linear-gradient(145deg, #07090f 0%, #0c1022 40%, #121833 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: calc(100% - 4rem);
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.hero-card {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 2.8rem 2.5rem;
+    border-radius: 24px;
+    background: rgba(12, 15, 27, 0.95);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(120, 124, 184, 0.45);
+}
+
+.hero-badges {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.hero-badges span {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.hero-cta {
+    display: inline-block;
+    background: #6C63FF;
+    color: #fff;
+    padding: 0.8rem 1.75rem;
+    border-radius: 9px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+/* Desktop: Large screens (1200px+) */
+@media (min-width: 1200px) {
+    .hero-section { padding: 5rem 1rem 7rem; }
+    .hero-container { padding: 0 1rem; max-width: calc(100% - 2rem); }
+    .hero-card { padding: 3.2rem 3rem; }
+}
+
+@media (max-width: 1080px) {
+    .hero-container { padding: 0 1.25rem; }
+    .hero-card { padding: 2.2rem 1.75rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-section { padding: 3.5rem 0 5rem; }
+    .hero-card { max-width: 90%; padding: 1.8rem 1.2rem; }
+    .hero-badges { margin-bottom: 1.2rem; }
+    .hero-cta { width: 100%; text-align: center; }
+}
+
+/* ── Navbar ── */
 .navbar {
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(15, 118, 110, 0.1);
+border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0 1.5rem;
 }
 
-.ubn-hero {
-  background:
-    radial-gradient(circle at 85% 10%, rgba(16, 185, 129, 0.18), transparent 46%),
-    radial-gradient(circle at 0% 60%, rgba(245, 158, 11, 0.16), transparent 38%),
-    linear-gradient(140deg, #0b3b39 0%, #0f766e 54%, #134e4a 100%);
-  color: #f8fffd;
-  padding: 4.5rem 0 5rem;
+.navbar__brand {
+    font-weight: 600;
+    font-size: 1rem;
 }
 
-.ubn-hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2rem;
-  align-items: center;
+[data-theme='dark'] .navbar__link {
+    color: #9BA3C2;
 }
 
-.ubn-kicker {
-  display: inline-block;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  padding: 0.2rem 0.7rem;
-  margin-bottom: 0.8rem;
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .navbar__link--active {
+    color: #A78BFA;
 }
 
-.ubn-title {
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  line-height: 1.08;
-  margin-bottom: 0.6rem;
+/* Logo: invert in dark mode if it's a dark SVG */
+[data-theme='dark'] .navbar__logo img {
+    filter: brightness(0) invert(1);
 }
 
-.ubn-subtitle {
-  font-size: 1.08rem;
-  max-width: 58ch;
-  opacity: 0.95;
+/* ── Sidebar ── */
+[data-theme='dark'] .menu {
+    background: #0D0F1A;
 }
 
-.ubn-stat-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 18px;
-  padding: 1.2rem 1.25rem;
-  box-shadow: 0 16px 40px rgba(2, 22, 22, 0.25);
+[data-theme='dark'] .menu__link {
+    color: #9BA3C2;
+    border-radius: 6px;
 }
 
-.ubn-stat-card h3 {
-  margin-bottom: 0.6rem;
+[data-theme='dark'] .menu__link:hover {
+    background: rgba(108, 99, 255, 0.1);
+    color: #E2E4F0;
 }
 
-.ubn-stat-card ul {
-  margin: 0;
-  padding-left: 1.1rem;
+[data-theme='dark'] .menu__link--active {
+    background: rgba(108, 99, 255, 0.18) !important;
+    color: #A78BFA !important;
+    font-weight: 500;
 }
 
-.ubn-stat-card li {
-  margin: 0.4rem 0;
+/* ── Code blocks ── */
+[data-theme='dark'] pre.prism-code {
+    background: #0D0F1A !important;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
 }
 
-.ubn-section {
-  padding: 2.2rem 0 3.2rem;
+[data-theme='dark'] code {
+    background: rgba(108, 99, 255, 0.12);
+    color: #A78BFA;
+    border: none;
 }
 
-.ubn-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+/* ── Buttons ── */
+.button--primary {
+    background: #6C63FF;
+    border-color: #6C63FF;
+    color: #fff;
+    font-weight: 500;
 }
 
-.ubn-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 118, 110, 0.15);
-  border-radius: 14px;
-  padding: 1rem 1.1rem;
-  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.08);
+.button--primary:hover {
+    background: #5A50F0;
+    border-color: #5A50F0;
+    color: #fff;
 }
 
-.ubn-card h3 {
-  margin-bottom: 0.45rem;
+.button--secondary {
+    background: transparent;
+    border: 1.5px solid rgba(108, 99, 255, 0.5);
+    color: #A78BFA;
 }
 
-.button.button--secondary {
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  background: rgba(255, 255, 255, 0.13);
-  color: #f9fffd;
+.button--secondary:hover {
+    background: rgba(108, 99, 255, 0.1);
+    border-color: #6C63FF;
+    color: #fff;
 }
 
-@media (max-width: 996px) {
-  .ubn-hero-grid {
-    grid-template-columns: 1fr;
+/* ── Search (easyops local search) ── */
+[data-theme='dark'] .search-result-match {
+    color: #A78BFA;
+    background: rgba(108, 99, 255, 0.15);
+}
+
+[data-theme='dark'] .navbar__search-input {
+    background: rgba(255, 255, 255, 0.06);
+    color: #E2E4F0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .navbar__search-input::placeholder {
+    color: #9BA3C2;
+}
+
+/* ── Footer ── */
+[data-theme='dark'] .footer {
+    background: #0D0F1A;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='dark'] .footer__title {
+    color: #E2E4F0;
+}
+
+[data-theme='dark'] .footer__link-item {
+    color: #9BA3C2;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+    color: #A78BFA;
+}
+
+/* ── TOC (right rail) ── */
+[data-theme='dark'] .table-of-contents__link {
+    color: #9BA3C2;
+}
+
+[data-theme='dark'] .table-of-contents__link:hover,
+[data-theme='dark'] .table-of-contents__link--active {
+    color: #A78BFA;
+}
+
+/* ── Docs content ── */
+[data-theme='dark'] .markdown h1,
+[data-theme='dark'] .markdown h2,
+[data-theme='dark'] .markdown h3 {
+    color: #E2E4F0;
+}
+
+[data-theme='dark'] .markdown a {
+    color: #A78BFA;
+}
+
+[data-theme='dark'] .markdown a:hover {
+    color: #ffffff;
+}
+
+/* =============================================
+   MOBILE RESPONSIVENESS
+   ============================================= */
+
+/* Navbar: shrink padding on small screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .navbar__brand {
+        font-size: 0.9rem;
+    }
+
+    /* Stack hero section */
+    .hero-section {
+        padding: 3rem 1.25rem 2rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.3;
+    }
+  .hero-section .hero-buttons {
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: stretch;
   }
+  .hero-section .hero-buttons a {
+      text-align: center;
+  }
+  /* Feature cards: 1 column on mobile */
+  .features-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem;
+    padding: 2rem 1.25rem;
+    }
+    
+    /* Code snippet: scroll horizontally */
+    .hero-code-block {
+        overflow-x: auto;
+        font-size: 12px !important;
+    }
+    
+    /* Sidebar: already handled by Docusaurus but ensure overlay works */
+    .navbar-sidebar {
+        background: #0D0F1A;
+    }
+    
+    [data-theme='dark'] .navbar-sidebar__brand {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+}
 
-  .ubn-cards {
-    grid-template-columns: 1fr;
+/* Tablet: 2-column feature grid */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+  .hero-section {
+      padding: 4rem 2rem;
+  }
+  .hero-section h1 {
+      font-size: 2.2rem !important;
+  }
+}
+
+/* Wide screens: constrain max width */
+@media (min-width: 1280px) {
+
+    .hero-section,
+    .features-section {
+        max-width: 1200px;
+        margin: 0 auto;
   }
 }
