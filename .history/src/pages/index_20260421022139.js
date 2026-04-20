@@ -307,8 +307,11 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <Link to="/docs/products-financial-products" className={styles.viewAll}>
+          <Link to="/docs/products/overview" className={styles.viewAll}>
             View all products and rates →
+          </Link>
+          {/* Fix: Link to an existing doc instead of a missing overview */}
+          {/* <Link to="/docs/products-financial-products" className={styles.viewAll}>View all products and rates →</Link> */}
           </Link>
         </div>
       </section>
